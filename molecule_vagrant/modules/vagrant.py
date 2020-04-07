@@ -560,11 +560,11 @@ class VagrantClient(object):
             },
         }
 
-        molecule.util.merge_dicts(
+        d["config"]["options"] = molecule.util.merge_dicts(
             d["config"]["options"], self._module.params["config_options"]
         )
 
-        molecule.util.merge_dicts(
+        d["provider"]["options"] = molecule.util.merge_dicts(
             d["provider"]["options"], self._module.params["provider_options"]
         )
 
